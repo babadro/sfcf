@@ -1,0 +1,31 @@
+﻿@model sfcf.WebUI.ViewModels.VotingListData
+@using PagedList.Mvc;
+@using sfcf.Domain.Entities;
+
+@{
+    ViewBag.Title = "Votings";
+}
+
+
+
+@if (Model.CurrentCategoryId != null)
+{
+    <h1>@Model.Categories.FirstOrDefault(c => c.ID == @Model.CurrentCategoryId).Name</h1>
+    /*
+        if (Model.Votings.FirstOrDefault() != null)
+        {
+            <h2>@Model.Votings.FirstOrDefault().Category.Name</h2>
+        }
+     */
+}
+    
+@foreach (var v in Model.Votings)
+    {
+        Html.RenderPartial("VotingInfo", v);    
+    }
+
+<br />
+Page @(Model.Votings.PageCount < Model.Votings.PageNumber ? 0 : Model.Votings.PageNumber) of @Model.Votings.PageCount
+
+@Html.PagedListPager(Model.Votings, x => Url.Action("List", new { page = x, categoryId = @Model.CurrentCategoryId }))
+

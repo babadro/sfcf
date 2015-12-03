@@ -1,0 +1,10 @@
+C:\source\sfcf\sfcf33PageComplete_ver2\sfcf\sfcf.Domain\bin\Debug\sfcf.Domain.dll
+C:\source\sfcf\sfcf33PageComplete_ver2\sfcf\sfcf.Domain\bin\Debug\sfcf.Domain.pdb
+C:\source\sfcf\sfcf33PageComplete_ver2\sfcf\sfcf.Domain\obj\Debug\sfcf.Domain.dll
+C:\source\sfcf\sfcf33PageComplete_ver2\sfcf\sfcf.Domain\obj\Debug\sfcf.Domain.pdb
+C:\source\sfcf\sfcf33PageComplete_ver2\sfcf\sfcf.Domain\bin\Debug\sfcf.Domain.dll.config
+C:\source\sfcf\sfcf33PageComplete_ver2\sfcf\sfcf.Domain\bin\Debug\EntityFramework.dll
+C:\source\sfcf\sfcf33PageComplete_ver2\sfcf\sfcf.Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\source\sfcf\sfcf33PageComplete_ver2\sfcf\sfcf.Domain\bin\Debug\EntityFramework.xml
+C:\source\sfcf\sfcf33PageComplete_ver2\sfcf\sfcf.Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\source\sfcf\sfcf33PageComplete_ver2\sfcf\sfcf.Domain\obj\Debug\sfcf.Domain.csprojResolveAssemblyReference.cache
