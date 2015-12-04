@@ -185,6 +185,7 @@
     <Content Include="Views\Shared\VotingInfo.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Voting\List.cshtml" />
+    <Content Include="Views\BetCart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

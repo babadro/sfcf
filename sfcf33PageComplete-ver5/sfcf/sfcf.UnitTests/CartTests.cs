@@ -92,7 +92,7 @@ namespace sfcf.UnitTests
             target.AddBetDraft(op2, 5);
             target.AddBetDraft(op6, 25);
 
-            int result = target.TotalSize();
+            int? result = target.TotalSize();
 
             // Assert
             Assert.AreEqual(50, result);

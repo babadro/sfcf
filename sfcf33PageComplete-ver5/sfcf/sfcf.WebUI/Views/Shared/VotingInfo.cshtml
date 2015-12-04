@@ -14,7 +14,7 @@
                 <h4 style="display:inline-block; width: auto;">@op.Title</h4>
                 @Html.Hidden("OptionId", op.ID)
                 @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
-                <input type="number" placeholder="Размер ставки" name="size" />
+                <input type="number" min="0" placeholder="Размер ставки" name="size" />
                 <input type="submit" value="Сделать предварительную ставку" />
                 }
             </div>

@@ -1,0 +1,39 @@
+﻿@model sfcf.WebUI.ViewModels.CartIndexData
+
+@{
+    ViewBag.Title = "Черновики ставок";
+}
+
+<h2>Черновики ставок</h2>
+
+
+<table width="90%" align="center" class="table-responsive">
+    <thead>
+        <tr>
+            <th align="center">Голосование</th>
+            <th align="center">Выбранный вариант</th>
+            <th align="center">Размер ставки</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var draft in Model.BetCart.BetDrafts)
+        {
+            <tr>
+                <td align="center">@draft.Option.Voting.Title</td>
+                <td align="center">@draft.Option.Title</td>
+                <td align="center">@if (draft.Size == null){
+                                       @Model.nullBetMessage
+                                   } else {
+                                       @draft.Size}</td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="2" align="right">Всего будет потрачено:</td>
+            <td align="right">@Model.BetCart.TotalSize().ToString()</td>
+        </tr>
+    </tfoot>
+</table>
+
+<a href="@Model.ReturnUrl" class="btn btn-default" role="button">Продолжить голосование</a>

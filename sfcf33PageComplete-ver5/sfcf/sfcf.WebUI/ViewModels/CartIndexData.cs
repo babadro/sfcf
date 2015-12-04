@@ -10,9 +10,8 @@ namespace sfcf.WebUI.ViewModels
     public class CartIndexData
     {
         public BetCart BetCart { get; set; }
-        public IEnumerable<Voting> Votings { get; set; }
         public string ReturnUrl { get; set; }
+        public string nullBetMessage { get; set; }
 
-        public int MyRandomId { get; set; }
     }
 }

@@ -23,13 +23,12 @@ namespace sfcf.WebUI.Controllers
             return View(new CartIndexData
             {
                 BetCart = GetCart(),
-                Votings = repository.Votings,
-                MyRandomId = 1,
-                ReturnUrl = returnUrl
+                ReturnUrl = returnUrl,
+                nullBetMessage = "На интерес"
             });
         }
 
-        public RedirectToRouteResult AddToBetCart(int optionId, int size, string returnUrl)
+        public RedirectToRouteResult AddToBetCart(int optionId, int? size, string returnUrl)
         {
             Option option = repository.Options.FirstOrDefault(op => op.ID == optionId);
 

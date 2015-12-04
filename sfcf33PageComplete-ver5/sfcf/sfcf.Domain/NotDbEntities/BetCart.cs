@@ -11,8 +11,9 @@ namespace sfcf.Domain.NotDbEntities
     {
         private List<BetDraft> betDraftCollection = new List<BetDraft>();
 
-        public void AddBetDraft(Option option, int size)
+        public void AddBetDraft(Option option, int? size)
         {
+            if (size < 0) throw new ArgumentOutOfRangeException("size", "Bet size must be equal or greater than zero!");
             BetDraft sameVotingDraft = betDraftCollection.Where(b => b.Option.VotingID == option.VotingID).FirstOrDefault();
 
             if (sameVotingDraft != null)
@@ -33,7 +34,7 @@ namespace sfcf.Domain.NotDbEntities
             betDraftCollection.RemoveAll(b => b.Option.ID == option.ID);
         }
 
-        public int TotalSize()
+        public int? TotalSize()
         {
             return betDraftCollection.Sum(b => b.Size);
         }
@@ -53,7 +54,7 @@ namespace sfcf.Domain.NotDbEntities
     public class BetDraft
     {
         public Option Option { get; set; }
-        public int Size { get; set; }
+        public int? Size { get; set; }
     }
 
 }

@@ -1,4 +1,3 @@
-C:\source\sfcf\sfcf33PageComplete-ver5\sfcf\sfcf.WebUI\obj\Debug\sfcf.WebUI.csprojResolveAssemblyReference.cache
 C:\source\sfcf\sfcf33PageComplete-ver5\sfcf\sfcf.WebUI\bin\sfcf.WebUI.dll.config
 C:\source\sfcf\sfcf33PageComplete-ver5\sfcf\sfcf.WebUI\bin\sfcf.WebUI.dll
 C:\source\sfcf\sfcf33PageComplete-ver5\sfcf\sfcf.WebUI\bin\sfcf.WebUI.pdb
@@ -36,5 +35,6 @@ C:\source\sfcf\sfcf33PageComplete-ver5\sfcf\sfcf.WebUI\bin\System.Web.WebPages.D
 C:\source\sfcf\sfcf33PageComplete-ver5\sfcf\sfcf.WebUI\bin\System.Web.WebPages.Razor.xml
 C:\source\sfcf\sfcf33PageComplete-ver5\sfcf\sfcf.WebUI\bin\Antlr3.Runtime.pdb
 C:\source\sfcf\sfcf33PageComplete-ver5\sfcf\sfcf.WebUI\bin\Newtonsoft.Json.xml
+C:\source\sfcf\sfcf33PageComplete-ver5\sfcf\sfcf.WebUI\obj\Debug\sfcf.WebUI.csprojResolveAssemblyReference.cache
 C:\source\sfcf\sfcf33PageComplete-ver5\sfcf\sfcf.WebUI\obj\Debug\sfcf.WebUI.dll
 C:\source\sfcf\sfcf33PageComplete-ver5\sfcf\sfcf.WebUI\obj\Debug\sfcf.WebUI.pdb
