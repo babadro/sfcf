@@ -1,8 +1,14 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Linq;
+using System.Web.Mvc;
 using sfcf.Domain.NotDbEntities;
 using sfcf.Domain.Entities;
-using System.Linq;
+using sfcf.Domain.Abstract;
+using sfcf.WebUI.Controllers;
+using sfcf.WebUI.ViewModels;
+using Moq;
+
 
 namespace sfcf.UnitTests
 {
@@ -122,6 +128,75 @@ namespace sfcf.UnitTests
 
             // Assert
             Assert.AreEqual(0, target.BetDrafts.Count());
+        }
+        #endregion
+
+        #region Can_Add_To_BetCart
+        [TestMethod]
+        public void Can_Add_To_BetCart()
+        {
+            // Arrange
+            Mock<IRepository> mock = new Mock<IRepository>();
+            mock.Setup(m => m.Options).Returns(new Option[]{
+                new Option {ID = 1, Title = "Option1", Description = "Description1"},
+            }.AsQueryable());
+
+            BetCart betCart = new BetCart();
+
+            // Arrange
+            BetCartController target = new BetCartController(mock.Object);
+
+            // Act
+            target.AddToBetCart(betCart, 1, 25, null);
+
+            // Assert
+            Assert.AreEqual(betCart.BetDrafts.Count(), 1);
+            Assert.AreEqual(betCart.BetDrafts.ToArray()[0].Option.ID, 1);
+        }
+        #endregion
+
+        #region Adding_Bet_To_BetCart_Goes_To_Cart_Screen()
+        [TestMethod]
+        public void Adding_Bet_To_BetCart_Goes_To_Cart_Screen()
+        {
+            // Arrange
+            Mock<IRepository> mock = new Mock<IRepository>();
+            mock.Setup(m => m.Options).Returns(new Option[]{
+                new Option {ID = 1, Title = "Option1", Description = "Description1"},
+            }.AsQueryable());
+
+            BetCart betCart = new BetCart();
+
+            // Arrange
+            BetCartController target = new BetCartController(mock.Object);
+
+            // Act
+            RedirectToRouteResult result = target.AddToBetCart(betCart, 2, 20, "testUrl");
+
+            // Assert
+            Assert.AreEqual(result.RouteValues["action"], "Index");
+            Assert.AreEqual(result.RouteValues["returnUrl"], "testUrl");
+
+            
+        }
+        #endregion
+
+        #region Can_View_BetCart_Contents
+        [TestMethod]
+        public void Can_View_BetCart_Contents()
+        {
+            // Arrange
+            BetCart betCart = new BetCart();
+
+            // Arrange
+            BetCartController target = new BetCartController(null);
+
+            // Act
+            CartIndexData result = (CartIndexData)target.Index(betCart, "testUrl").ViewData.Model;
+
+            // Assert
+            Assert.AreSame(betCart, result.BetCart);
+            Assert.AreEqual("testUrl", result.ReturnUrl);
         }
         #endregion
     }

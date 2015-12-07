@@ -9,6 +9,7 @@ using System.Linq;
 using sfcf.Domain.Entities;
 using sfcf.Domain.Concrete;
 using sfcf.Domain.Abstract;
+using sfcf.Domain.NotDbEntities;
 
 namespace sfcf.WebUI.Infrastructure
 {

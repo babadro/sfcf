@@ -1,0 +1,11 @@
+﻿@model sfcf.Domain.NotDbEntities.BetCart
+
+<div class="top-right">
+    <span class="caption">
+        <b>Черновики ставок</b>
+        @Model.BetDrafts.Count() ставка(ок),
+        @Model.TotalSize().ToString() пункта(ов) рейтинга использовано
+    </span>
+
+    @Html.ActionLink("Завершить", "Index", "BetCart", new { returnUrl = Request.Url.PathAndQuery }, null)
+</div>

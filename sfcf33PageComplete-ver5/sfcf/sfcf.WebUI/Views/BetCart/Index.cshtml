@@ -24,7 +24,16 @@
                 <td align="center">@if (draft.Size == null){
                                        @Model.nullBetMessage
                                    } else {
-                                       @draft.Size}</td>
+                                       @draft.Size}
+                </td>
+                <td>
+                    @using (Html.BeginForm("RemoveFromBetCart", "BetCart"))
+                    {
+                        @Html.Hidden("optionId", draft.Option.ID)
+                        @Html.HiddenFor(x => x.ReturnUrl)
+                        <input class="btn btn-default" type="submit" value="Удалить" />                                                                
+                    }
+                </td>
             </tr>
         }
     </tbody>

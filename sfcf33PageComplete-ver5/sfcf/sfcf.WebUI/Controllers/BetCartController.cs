@@ -18,47 +18,43 @@ namespace sfcf.WebUI.Controllers
             repository = repo;
         }
 
-        public ViewResult Index(string returnUrl)
+        public ViewResult Index(BetCart betCart, string returnUrl)
         {
             return View(new CartIndexData
             {
-                BetCart = GetCart(),
+                BetCart = betCart,
                 ReturnUrl = returnUrl,
                 nullBetMessage = "На интерес"
             });
         }
 
-        public RedirectToRouteResult AddToBetCart(int optionId, int? size, string returnUrl)
+        public PartialViewResult Summary(BetCart betCart)
+        {
+            return PartialView(betCart);
+        }
+
+        public RedirectToRouteResult AddToBetCart(BetCart betCart, int optionId, int? size, string returnUrl)
         {
             Option option = repository.Options.FirstOrDefault(op => op.ID == optionId);
 
             if (option != null)
             {
-                GetCart().AddBetDraft(option, size);
+                betCart.AddBetDraft(option, size);
             }
             return RedirectToAction("Index", new { returnUrl });
         }
 
-        public RedirectToRouteResult RemoveFromBetCart(int optionId, string returnUrl)
+        public RedirectToRouteResult RemoveFromBetCart(BetCart betCart, int optionId, string returnUrl)
         {
             Option option = repository.Options.FirstOrDefault(op => op.ID == optionId);
 
             if (option != null)
             {
-                GetCart().RemoveDraft(option);
+                betCart.RemoveDraft(option);
             }
             return RedirectToAction("Index", new { returnUrl });
         }
 
-        private BetCart GetCart()
-        {
-            BetCart cart = (BetCart)Session["Cart"];
-            if (cart == null)
-            {
-                cart = new BetCart();
-                Session["Cart"] = cart;
-            }
-            return cart;
-        }
+       
     }
 }

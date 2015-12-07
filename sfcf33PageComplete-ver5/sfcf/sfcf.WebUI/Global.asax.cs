@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using sfcf.WebUI.Infrastructure;
+using sfcf.WebUI.Binders;
+using sfcf.Domain.NotDbEntities;
 
 namespace sfcf.WebUI
 {
@@ -19,6 +21,7 @@ namespace sfcf.WebUI
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory());
+            ModelBinders.Binders.Add(typeof(BetCart), new BetCartModelBinder());
         }
     }
 }

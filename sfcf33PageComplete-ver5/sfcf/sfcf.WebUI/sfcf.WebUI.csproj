@@ -131,6 +131,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Binders\BetCartModelBinder.cs" />
     <Compile Include="Controllers\BetCartController.cs" />
     <Compile Include="Controllers\CategoryNavController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -186,6 +187,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Voting\List.cshtml" />
     <Content Include="Views\BetCart\Index.cshtml" />
+    <Content Include="Views\BetCart\Summary.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
